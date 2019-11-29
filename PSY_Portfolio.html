@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>박신영 포트폴리오</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <script>
+        $(document).ready(function() {
+
+            $("header>ul>li").click(function(e) {
+                e.preventDefault();
+                var i = $(this).index();
+                var sTop = $("section").eq(i).offset().top;
+
+
+                $("body, html").animate({
+                    scrollTop: sTop
+                }, 1000);
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "NanumSquare"
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            background: white;
+        }
+
+        header>ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        header>ul {
+            width: 60%;
+            margin-left: 40%;
+        }
+
+        header>ul>li {
+            float: left;
+            width: 20%;
+            padding: 2.5%;
+            text-align: center;
+        }
+
+        header>ul>li:hover {
+            border-bottom: 5px solid orange;
+        }
+
+        header>ul>li>a {
+            color: #333;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #Home {
+            width: 100%;
+            position: relative;
+        }
+
+        #Home>img {
+            width: 100%;
+        }
+
+        #Home>h1 {
+            position: absolute;
+            left: 10%;
+            top: 71%;
+            font-size: 3vw;
+            color: white;
+            letter-spacing: 1px;
+            border-bottom: 5px solid orange;
+            padding-bottom: 0.5%;
+            text-shadow: 5px 1px 14px black;
+        }
+
+        #Home>h2 {
+            position: absolute;
+            left: 10%;
+            top: 80%;
+            font-size: 1.5vw;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        #About {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        #About::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #About>h2 {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 6%;
+            text-align: center;
+            font-size: 50px;
+            color: orange;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        #About>.left {
+            width: 38%;
+            float: left;
+            margin-left: 2%;
+            margin-top: 6%;
+            position: relative;
+        }
+
+        #About>.left::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #About>.left>h3 {
+            font-size: 30px;
+        }
+
+        #About>.left>.left-Me {
+            float: left;
+            width: 70%;
+            margin-right: 5%;
+            margin-top: 2%;
+        }
+
+        #About>.left>.left-Me>img {
+            width: 100%;
+        }
+
+
+        #About>.right {
+            width: 50%;
+            float: right;
+            margin-left: 8%;
+            margin-right: 2%;
+            margin-top: 6%;
+        }
+
+        #About>.right>.Speak {
+            float: left;
+            width: 100%;
+            margin-top: 7%;
+        }
+
+        #About>.right>.Speak>h3 {
+            font-size: 30px;
+        }
+
+        #About>.right>.Speak>h4 {
+            font-size: 16px;
+            margin-top: 1%;
+        }
+
+        #About>.right>.Speak>ul {
+            padding: 2%;
+            margin-top: 2%;
+        }
+
+        #About>.right>.Speak>ul>li {
+            padding-top: 1%;
+            font-size: 18px;
+            letter-spacing: 2.5px;
+        }
+
+        #About>.right>.Education {
+            float: left;
+            width: 100%;
+            margin-top: 12%;
+        }
+
+        #About>.right>.Education>h3 {
+            font-size: 30px;
+        }
+
+        #About>.right>.Education>ul {
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #About>.right>.Education>ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #About>.right>.Education>ul>li {
+            float: left;
+            width: 33.3%;
+        }
+
+        #About>.right>.Education>ul>li>.date {
+            margin-top: 15%;
+            margin-bottom: 30%;
+            font-size: 14px;
+        }
+
+        #Skill {
+            width: 100%;
+            background: #ededed;
+            margin-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        #Skill>.SkillBox {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        #Skill>.SkillBox>h2 {
+            text-align: center;
+            color: orange;
+            font-size: 50px;
+            text-shadow: 1px 1px 1px black;
+            padding-top: 6%;
+        }
+
+        #Skill>.SkillBox>h3 {
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        #Skill>.SkillBox>ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #Skill>.SkillBox>ul {
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        #Skill>.SkillBox>ul>li {
+            float: left;
+            width: 33.3%;
+            text-align: center;
+        }
+
+
+        #Portfolio {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom: 7%;
+        }
+
+        #Portfolio>h2 {
+            text-align: center;
+            color: orange;
+            font-size: 50px;
+            text-shadow: 1px 1px 1px black;
+            padding-top: 6%;
+        }
+
+        #Portfolio>.First {
+            width: 96%;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5%;
+        }
+
+        #Portfolio>.First::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #Portfolio>.First>.First-Left {
+            width: 50%;
+            float: left
+        }
+
+        #Portfolio>.First>.First-Left img {
+            width: 80%;
+        }
+
+        #Portfolio>.First>.First-Right {
+            width: 50%;
+            float: right
+        }
+
+        #Portfolio>.First>.First-Right>ul>li {
+            margin-top: 2%;
+            font-size: 20px;
+        }
+
+        #Portfolio>.First>.First-Right>ul>li:nth-child(1) {
+            margin-top: 3%;
+        }
+
+        #Portfolio>.First>.First-Right>ul>li:nth-child(3) {
+            margin-top: 10%;
+        }
+
+        #Portfolio>.First>.First-Right>ul>.plus {
+            font-size: 16px;
+        }
+
+        #Portfolio>.First>.First-Right>a>.GoHome {
+            width: 60%;
+            margin-top: 3%;
+            height: 40px;
+            line-height: 40px;
+            background: orange;
+            border: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        #Portfolio>.Second {
+            width: 96%;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5%;
+        }
+
+        #Portfolio>.Second::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #Portfolio>.Second>.Second-Left {
+            width: 50%;
+            float: left
+        }
+
+        #Portfolio>.Second>.Second-Left img {
+            width: 80%;
+        }
+
+        #Portfolio>.Second>.Second-Right {
+            width: 50%;
+            float: right
+        }
+
+        #Portfolio>.Second>.Second-Right>ul>li {
+            margin-top: 2%;
+            font-size: 20px;
+        }
+
+        #Portfolio>.Second>.Second-Right>ul>li:nth-child(1) {
+            margin-top: 3%;
+        }
+
+        #Portfolio>.Second>.Second-Right>ul>li:nth-child(3) {
+            margin-top: 10%;
+        }
+
+        #Portfolio>.Second>.Second-Right>ul>.plus {
+            font-size: 16px;
+        }
+
+        #Portfolio>.Second>.Second-Right>a>.GoHome {
+            width: 60%;
+            margin-top: 3%;
+            height: 40px;
+            line-height: 40px;
+            background: orange;
+            border: none;
+            color: white;
+            font-size: 18px;
+        }
+        
+        
+        #Portfolio>.Third {
+            width: 96%;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5%;
+        }
+
+        #Portfolio>.Third::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #Portfolio>.Third>.Third-Left {
+            width: 50%;
+            float: left
+        }
+
+        #Portfolio>.Third>.Third-Left img {
+            width: 80%;
+        }
+
+        #Portfolio>.Third>.Third-Right {
+            width: 50%;
+            float: right
+        }
+
+        #Portfolio>.Third>.Third-Right>ul>li {
+            margin-top: 2%;
+            font-size: 20px;
+        }
+
+        #Portfolio>.Third>.Third-Right>ul>li:nth-child(1) {
+            margin-top: 3%;
+        }
+
+        #Portfolio>.Third>.Third-Right>ul>li:nth-child(3) {
+            margin-top: 10%;
+        }
+
+        #Portfolio>.Third>.Third-Right>ul>.plus {
+            font-size: 16px;
+        }
+
+        #Portfolio>.Third>.Third-Right>a>.GoHome {
+            width: 60%;
+            margin-top: 3%;
+            height: 40px;
+            line-height: 40px;
+            background: orange;
+            border: none;
+            color: white;
+            font-size: 18px;
+        }
+
+
+        #Contact {
+            width: 100%;
+            background: #ededed;
+            padding-bottom: 8%;
+        }
+
+        #Contact::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #Contact>h2 {
+            text-align: center;
+            color: orange;
+            font-size: 50px;
+            text-shadow: 1px 1px 1px black;
+            padding-top: 6%;
+            padding-bottom: 3%;
+        }
+
+        #Contact>.Contact-Left {
+            float: left;
+            width: 48%;
+            margin-left: 2%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #Contact>.Contact-Left>p {
+            width: 50%;
+            font-size: 24px;
+            margin: 0 auto;
+            line-height: 80px;
+        }
+
+        #Contact>.Contact-Left>p>strong {
+            width: 30%;
+            text-align: left;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        #Contact>.Contact-Left>p>span {
+            width: 70%;
+            text-align: right;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        #Contact>.Contact-Right {
+            float: right;
+            width: 48%;
+            margin-right: 2%;
+            text-align: center;
+            margin-top: 3%;
+        }
+
+        #Contact>.Contact-Right>p {
+            width: 50%;
+            font-size: 24px;
+            margin: 0 auto;
+            line-height: 80px;
+        }
+
+        #Contact>.Contact-Right>p>strong {
+            width: 30%;
+            text-align: left;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        #Contact>.Contact-Right>p>span {
+            width: 70%;
+            text-align: right;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        .fa-html5 {
+            font-size: 150px;
+            color: orange;
+        }
+
+        .fa-css3-alt {
+            font-size: 150px;
+            color: orange;
+        }
+
+        .fa-js {
+            font-size: 150px;
+            color: orange;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            height: 40px;
+            line-height: 40px;
+            text-align: right;
+        }
+
+        footer>p {
+            margin-right: 30px;
+        }
+
+        @media screen and (min-width:740px) and (max-width:1023px) {
+            header>ul {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            header>ul>li>a {
+                font-size: 16px;
+            }
+
+            #Home>h1 {
+                top: 68%;
+                font-size: 4vw;
+            }
+
+            #About>.left {
+                width: 50%;
+                position: absolute;
+                z-index: -1;
+            }
+
+            #About>.left>h3 {
+                font-size: 24px;
+            }
+
+
+            #About>.right {
+                width: 56%;
+                float: right;
+                margin-left: 4%;
+                margin-right: 2%;
+                margin-top: 6%;
+            }
+
+            #About>.right>.Speak>h3 {
+                font-size: 24px;
+            }
+
+            #About>.right>.Speak>h4 {
+                font-size: 14px;
+            }
+
+            #About>.right>.Speak>ul>li {
+                font-size: 14px;
+            }
+
+            #About>.right>.Education>h3 {
+                font-size: 24px;
+            }
+
+            #About>.right>.Education>ul>li>.date {
+                font-size: 12px;
+            }
+
+            #About>.right>.Education>ul>li>p {
+                font-size: 12px;
+            }
+
+            #Skill {
+                width: 100%;
+                background: #ededed;
+                margin-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            #Skill>.SkillBox>h2 {
+                font-size: 36px;
+            }
+
+            #Skill>.SkillBox>h3 {
+                text-align: center;
+                margin-top: 1%;
+                font-size: 16px;
+            }
+
+            #Skill>.SkillBox>ul>li {
+                float: left;
+                width: 33.3%;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            #Portfolio>h2 {
+                font-size: 36px;
+            }
+
+            #Contact {
+                width: 100%;
+                background: #ededed;
+                padding-bottom: 8%;
+            }
+
+            #Contact>h2 {
+                text-align: center;
+                color: orange;
+                font-size: 36px;
+                text-shadow: 1px 1px 1px black;
+                padding-top: 6%;
+                padding-bottom: 3%;
+            }
+
+            #Contact>.Contact-Left {
+                float: left;
+                width: 48%;
+                margin-left: 2%;
+                text-align: center;
+                margin-top: 3%;
+            }
+
+            #Contact>.Contact-Left>p {
+                width: 70%;
+                font-size: 20px;
+                margin: 0 auto;
+                line-height: 80px;
+            }
+
+            #Contact>.Contact-Left>p>strong {
+                width: 30%;
+                text-align: left;
+                display: inline-block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Left>p>span {
+                width: 70%;
+                text-align: right;
+                display: inline-block;
+                font-size: 18px;
+            }
+
+            #Contact>.Contact-Right {
+                float: right;
+                width: 48%;
+                margin-right: 2%;
+                text-align: center;
+                margin-top: 3%;
+            }
+
+            #Contact>.Contact-Right>p {
+                width: 70%;
+                font-size: 20px;
+                margin: 0 auto;
+                line-height: 80px;
+            }
+
+            #Contact>.Contact-Right>p>strong {
+                width: 30%;
+                text-align: left;
+                display: inline-block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Right>p>span {
+                width: 70%;
+                text-align: right;
+                display: inline-block;
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (min-width:500px) and (max-width:739px) {
+            #Home>h1 { font-size: 5vw;}
+            
+            header>ul {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            header>ul>li>a {
+                font-size: 12px;
+            }
+
+            #Home>h1 {
+                top: 68%;
+                font-size: 4vw;
+            }
+
+            #About>.left {
+                width: 80%;
+                position: absolute;
+                z-index: -1;
+            }
+
+            #About>.left>.left-Me>img {
+                opacity: 0.5;
+            }
+
+            #About>h2 {
+                font-size: 36px;
+            }
+
+            #About>.left>h3 {
+                font-size: 20px;
+            }
+
+            #About>.right {
+                width: 86%;
+                float: right;
+                margin-left: 4%;
+                margin-right: 2%;
+                margin-top: 6%;
+            }
+
+            #About>.right>.Speak {
+                text-align: right;
+            }
+
+            #About>.right>.Speak>h3 {
+                font-size: 20px;
+                margin-right: 37%;
+            }
+
+            #About>.right>.Speak>h4 {
+                font-size: 14px;
+                margin-right: 10%;
+                margin-top: 2%;
+            }
+
+            #About>.right>.Speak>ul>li {
+                font-size: 16px;
+                margin-top: 4%;
+            }
+
+            #About>.right>.Education>h3 {
+                font-size: 20px;
+            }
+
+            #About>.right>.Education>ul>li>.date {
+                font-size: 12px;
+            }
+
+            #About>.right>.Education>ul>li>p {
+                font-size: 12px;
+            }
+
+            #Skill {
+                width: 100%;
+                background: #ededed;
+                margin-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            #Skill>.SkillBox>h2 {
+                font-size: 36px;
+            }
+
+            #Skill>.SkillBox>h3 {
+                text-align: center;
+                margin-top: 1%;
+                font-size: 14px;
+            }
+
+            #Skill>.SkillBox>ul>li {
+                float: left;
+                width: 33.3%;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .fa-html5 {
+                font-size: 120px;
+            }
+
+            .fa-css3-alt {
+                font-size: 120px;
+            }
+
+            .fa-js {
+                font-size: 120px;
+            }
+
+            #Portfolio>h2 {
+                font-size: 36px;
+            }
+
+            #Portfolio>.First>.First-Left {
+                width: 40%;
+            }
+
+            #Portfolio>.First>.First-Right {
+                width: 60%;
+            }
+
+            #Portfolio>.First>.First-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.First>.First-Right>ul>li {
+                margin-top: 2%;
+                font-size: 14px;
+            }
+
+            #Portfolio>.First>.First-Right>ul>.plus {
+                font-size: 12px;
+            }
+
+            #Portfolio>.First>.First-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                width: 100%;
+            }
+
+            #Portfolio>.Second>.Second-Left {
+                width: 40%;
+            }
+
+            #Portfolio>.Second>.Second-Right {
+                width: 60%;
+            }
+
+            #Portfolio>.Second>.Second-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>li {
+                margin-top: 2%;
+                font-size: 14px;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>.plus {
+                font-size: 12px;
+            }
+
+            #Portfolio>.Second>.Second-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                width: 100%;
+            }
+            
+            
+            #Portfolio>.Third>.Third-Left {
+                width: 40%;
+            }
+
+            #Portfolio>.Third>.Third-Right {
+                width: 60%;
+            }
+
+            #Portfolio>.Third>.Third-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>li {
+                margin-top: 2%;
+                font-size: 14px;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>.plus {
+                font-size: 12px;
+            }
+
+            #Portfolio>.Third>.Third-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                width: 100%;
+            }
+
+            #Contact>h2 {
+                font-size: 36px;
+            }
+
+            #Contact>.Contact-Left {
+                float: left;
+                width: 46%;
+                margin-left: 10%;
+                margin-top: 5%;
+                margin-bottom: 3%;
+            }
+
+            #Contact>.Contact-Left>p {
+                width: 100%;
+                font-size: 16px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            #Contact>.Contact-Left>p>strong {
+                width: 100%;
+                text-align: left;
+                display: block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Left>p>span {
+                width: 100%;
+                text-align: left;
+                display: block;
+                font-size: 14px;
+            }
+
+            #Contact>.Contact-Right {
+                float: right;
+                width: 42%;
+                margin-right: 2%;
+                margin-top: 5%;
+                margin-bottom: 3%;
+            }
+
+            #Contact>.Contact-Right>p {
+                width: 100%;
+                font-size: 16px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            #Contact>.Contact-Right>p>strong {
+                width: 100%;
+                text-align: left;
+                display: block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Right>p>span {
+                width: 100%;
+                text-align: left;
+                display: block;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width:499px) {
+            header>ul { width: 100%; margin-left: 0;}
+            #Home>h1 { font-size: 6vw; top:65%;}
+            #Home>h2 { margin-top: 5%; font-size: 3vw; top:76%;}
+            #About>.left {
+                width: 98%;
+                position: relative;
+            }
+            header>ul>li>a { font-size: 12px;}
+
+            #About>h2 {
+                font-size: 30px;
+            }
+
+            #About>.left>h3 {
+                font-size: 20px;
+            }
+
+            #About>.left>.left-Me {
+                width: 50%;
+                margin-left: 25%;
+                margin-top: 10%;
+            }
+
+            #About>.right {
+                width: 96%;
+                float: right;
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-top: 5%;
+            }
+
+            #About>.right>.Speak {
+                text-align: left;
+            }
+
+            #About>.right>.Speak>h3 {
+                font-size: 20px;
+            }
+
+            #About>.right>.Speak>h4 {
+                font-size: 14px;
+                margin-top: 2%;
+            }
+
+            #About>.right>.Speak>ul>li {
+                font-size: 12px;
+                margin-top: 4%;
+            }
+
+            #About>.right>.Education {
+                margin-top: 15%;
+            }
+
+            #About>.right>.Education>h3 {
+                font-size: 20px;
+                margin-bottom: 10%;
+            }
+
+            #About>.right>.Education>ul>li>.date {
+                font-size: 12px;
+            }
+
+            #About>.right>.Education>ul>li>p {
+                font-size: 12px;
+            }
+            
+            #Skill>.SkillBox>h2 { font-size: 30px;}
+
+            #Skill>.SkillBox>h3 {
+                margin-top: 3%;
+                font-size: 10px;
+            }
+
+            #Skill>.SkillBox>ul>li {
+                font-size: 10px;
+            }
+
+            .fa-html5 {
+                font-size: 100px;
+            }
+
+            .fa-css3-alt {
+                font-size: 100px;
+            }
+
+            .fa-js {
+                font-size: 100px;
+            }
+
+            #Portfolio>h2 {
+                font-size: 36px;
+            }
+
+            #Portfolio>.First>.First-Left {
+                width: 100%;
+            }
+
+            #Portfolio>.First>.First-Right {
+                width: 100%;
+                margin-top: 5%;
+            }
+
+            #Portfolio>.First>.First-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.First>.First-Right>ul {
+                margin-top: 5%;
+            }
+
+            #Portfolio>.First>.First-Right>ul>li {
+                margin-top: 2%;
+                font-size: 16px;
+            }
+
+            #Portfolio>.First>.First-Right>ul>li:nth-child(1) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.First>.First-Right>ul>li:nth-child(2) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.First>.First-Right>ul>.plus {
+                font-size: 14px;
+            }
+
+            #Portfolio>.First>.First-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            #Portfolio>.Second>.Second-Left {
+                width: 100%;
+            }
+
+            #Portfolio>.Second>.Second-Right {
+                width: 100%;
+                margin-top: 5%;
+            }
+
+            #Portfolio>.Second>.Second-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul {
+                margin-top: 5%;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>li {
+                margin-top: 2%;
+                font-size: 16px;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>li:nth-child(1) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>li:nth-child(2) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.Second>.Second-Right>ul>.plus {
+                font-size: 14px;
+            }
+
+            #Portfolio>.Second>.Second-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            
+            #Portfolio>.Third>.Third-Left {
+                width: 100%;
+            }
+
+            #Portfolio>.Third>.Third-Right {
+                width: 100%;
+                margin-top: 5%;
+            }
+
+            #Portfolio>.Third>.Third-Right h3 {
+                font-size: 16px;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul {
+                margin-top: 5%;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>li {
+                margin-top: 2%;
+                font-size: 16px;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>li:nth-child(1) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>li:nth-child(2) {
+                margin-left: 5%;
+                width: 88%;
+            }
+
+            #Portfolio>.Third>.Third-Right>ul>.plus {
+                font-size: 14px;
+            }
+
+            #Portfolio>.Third>.Third-Right>a>.GoHome {
+                margin-top: 5%;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            #Contact>h2 {
+                font-size: 36px;
+            }
+
+            #Contact>.Contact-Left {
+                float: left;
+                width: 46%;
+                margin-left: 10%;
+                margin-top: 5%;
+                margin-bottom: 3%;
+            }
+
+            #Contact>.Contact-Left>p {
+                width: 100%;
+                font-size: 14px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            #Contact>.Contact-Left>p>strong {
+                width: 30%;
+                text-align: left;
+                display: block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Left>p>span {
+                width: 80%;
+                text-align: left;
+                display: block;
+                font-size: 12px;
+            }
+
+            #Contact>.Contact-Right {
+                float: right;
+                width: 42%;
+                margin-right: 2%;
+                margin-top: 5%;
+                margin-bottom: 3%;
+            }
+
+            #Contact>.Contact-Right>p {
+                width: 100%;
+                font-size: 14px;
+                text-align: center;
+                line-height: 30px;
+            }
+
+            #Contact>.Contact-Right>p>strong {
+                width: 30%;
+                text-align: left;
+                display: block;
+                font-weight: 500;
+            }
+
+            #Contact>.Contact-Right>p>span {
+                width: 80%;
+                text-align: left;
+                display: block;
+                font-size: 12px;
+            }
+
+            footer {
+                background: black;
+                color: white;
+                height: 40px;
+                line-height: 40px;
+                text-align: right;
+            }
+
+            footer>p {
+                font-size: 12px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">
+        <ul>
+            <li data-target="#about"><a href="#About">ABOUT ME</a></li>
+            <li data-target="#skill"><a href="#Skill">SKILL</a></li>
+            <li data-target="#portfolio"><a href="#Portfolio">PORTFOLIO</a></li>
+            <li data-target="#contact"><a href="#Contact">CONTACT</a></li>
+        </ul>
+    </header>
+    <div id="wrap">
+
+        <div id="Home">
+            <img src="images/Background4.jpg" alt="Home 배경화면">
+            <h1>Creative Purblisher</h1>
+            <div class="Transform">
+
+            </div>
+            <h2>Park - Shin Yeong</h2>
+
+
+        </div>
+        <section id="About">
+            <h2>About Me</h2>
+            <div class="left">
+                <h3>Profile</h3>
+                <div class="left-Me"><img src="images/NewPicture.jpg" alt="증명사진"></div>
+
+            </div>
+            <div class="right">
+                <div class="Speak">
+                    <h3>Who Am I ?</h3>
+                    <h4>문제를 해결하기 위해 끈임없이 고민하는 준비된 인재 </h4>
+
+                    <ul>
+                        <li>생각에 한계를 두지 않는 창의성을 추구합니다.</li>
+                        <li>실패를 두려워 하지 않는 열정을 추구합니다.</li>
+                        <li>새로운 코드들을 찾아보는 탐구심을 추구합니다.</li>
+                    </ul>
+                </div>
+
+                <div class="Education">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>
+                            <p>남서울대학교</p>
+                            <p>멀티미디어학과 전공</p>
+                            <p class="date">2013.03 ~ 2020.02</p>
+                        </li>
+                        <li>
+                            <p>청년취업아카데미</p>
+                            <p>인터렉티브 제작 특별반</p>
+                            <p class="date">2018.06 ~ 2018.08</p>
+                        </li>
+                        <li>
+                            <p>방송정보국제교육원</p>
+                            <p>스마트콘텐츠 제작자</p>
+                            <p class="date">2019.06 ~ 2019.11</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </section>
+        <section id="Skill">
+            <div class="SkillBox">
+                <h2>Skill</h2>
+                <h3>기본적인 포토샵과 일러스트 외에 제가 사용할 수 있는 기술들입니다.</h3>
+
+                <ul>
+                    <li class="html">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5</h4>
+                    </li>
+                    <li class="css">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS3</h4>
+                    </li>
+                    <li class="java">
+                        <i class="fab fa-js"></i>
+                        <h4>JAVASCRIPT &amp; JQUERY</h4>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="Portfolio">
+            <h2>Portfolio</h2>
+
+            <div class="First">
+                <div class="First-Left">
+                    <img src="images/Portfolio.JPG" alt="포트폴리오 01">
+                </div>
+                <div class="First-Right">
+                    <h3>01. 수제화 전문 사이트 Gentleman</h3>
+                    <ul>
+                        <li>남성구두가 전문적이고 고풍스러운 느낌이 나서 제작을 시작하였습니다.</li>
+                        <li>총 13개의 서브페이지가 있고 상품은 주로 4종류의 신발을 취급하였습니다.</li>
+                        <li class="plus">디자인 100% - 메인 슬라이드 및 상품 상세피이지 등</li>
+                        <li class="plus">코딩 100% - 반응형, HTML5, CSS3, jQuery</li>
+                    </ul>
+
+                    <a href="https://weempsss.github.io/Gentleman"><button class="GoHome">홈페이지 이동하기</button></a>
+                </div>
+            </div>
+            
+            <div class="Second">
+                <div class="Second-Left">
+                    <img src="images/Portfolio2.JPG" alt="포트폴리오 02">
+                </div>
+                <div class="Second-Right">
+                    <h3>02. 호텔 사이트 Rits Hotel ( 팀 프로젝트 )</h3>
+                    <ul>
+                        <li>세련된 디자인과 다양한 콘텐츠가 가미된 호텔을 주제로 정했습니다.</li>
+                        <li>총 13개의 서브페이지가 있으며 최상단에 총 4개의 메인메뉴가 존재합니다.</li>
+                        <li class="plus">디자인 80% - 회원가입, 로그인 등</li>
+                        <li class="plus">코딩 100% - 반응형, HTML5, CSS3, jQuery</li>
+                    </ul>
+
+                    <a href="https://weempsss.github.io/Rits"><button class="GoHome">홈페이지 이동하기</button></a>
+                </div>
+            </div>
+            
+            <div class="Third">
+                <div class="Third-Left">
+                    <img src="images/Portfolio3.JPG" alt="포트폴리오 03">
+                </div>
+                <div class="Third-Right">
+                    <h3>03. 기업 사이트 Shinyil </h3>
+                    <ul>
+                        <li>가장 무난하고 세련된 디자인의 기업사이트를 주제로 정했습니다.</li>
+                        <li>총 9개의 서브페이지가 있으며 최상단에 총 4종류의 메인메뉴가 존재합니다.</li>
+                        <li class="plus">디자인 80% - 회원가입, 로그인 등</li>
+                        <li class="plus">코딩 100% - 반응형, HTML5, CSS3, jQuery</li>
+                    </ul>
+
+                    <a href="https://weempsss.github.io/shinyil"><button class="GoHome">홈페이지 이동하기</button></a>
+                </div>
+            </div>
+        </section>
+        <section id="Contact">
+            <h2>Contact</h2>
+
+            <div class="Contact-Left">
+                <p><strong>연령</strong><span>1994-05-31</span></p>
+                <p><strong>위치</strong><span>경기도 안산시 선부동</span></p>
+            </div>
+            <div class="Contact-Right">
+                <p><strong>연락처</strong><span>010-2826-3511</span></p>
+                <p><strong>이메일</strong><span>gz0531@naver.com</span></p>
+            </div>
+
+        </section>
+
+        <footer id="footer">
+            <p>Copyright ⓒ 2019 ShinYeong Park All right reserved.</p>
+        </footer>
+    </div>
+
+</body></html>
